@@ -43,21 +43,18 @@
   <ItemGroup>
     <None Include="HelloWorld.fsx" />
     <None Include="Basic syntax you need to know.fsx" />
-    <None Include="Types Exercise 1 - Tuples.fsx" />
-    <None Include="Types Exercise 2 - Records.fsx" />
-    <None Include="Types Exercise 1 - Option types.fsx" />
-    <None Include="Types Exercise 2 - Choice types.fsx" />
-    <None Include="Types Exercise 2 - Choice types %28answers%29.fsx" />
     <None Include="DDD Exercise 1 - CardGame.fsx" />
     <None Include="DDD Exercise 1 - CardGame %28answers%29.fsx" />
     <None Include="DDD Exercise 2 - Contact.fsx" />
     <None Include="DDD Exercise 2 - Contact %28answers%29.fsx" />
     <None Include="DDD Exercise 3 - Payments.fsx" />
     <None Include="DDD Exercise 3 - Payments %28answers%29.fsx" />
-    <None Include="DDD Exercise 4 - Replacing flags.fsx" />
-    <None Include="DDD Exercise 4 - Replacing flags %28answers%29.fsx" />
-    <None Include="Roman Numerals.fsx" />
-    <None Include="Clean domain input and output.png" />
+    <None Include="DDD Exercise 4 - Refactoring flags.fsx" />
+    <None Include="DDD Exercise 4 - Refactoring flags %28answers%29.fsx" />
+    <None Include="Validation - Domain input and output.png" />
+    <None Include="Validation 1 - Roman Numerals.fsx" />
+    <None Include="Validation 2 - Contact.fsx" />
+    <None Include="Rop.fsx" />
     <None Include="DSL Exercise 1 - Time.fsx" />
     <None Include="DSL Exercise 1 - Time %28answers%29.fsx" />
     <None Include="DSL Exercise 2 - Turtle Graphics.fsx" />

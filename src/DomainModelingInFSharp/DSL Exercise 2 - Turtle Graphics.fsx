@@ -5,23 +5,31 @@
 
 
 (*
-A turtle has a Position, a Direction and a Color.
-
-The Position is in a x,y coordinate grid
-The Direction is one of Up, Down, Left, Right
-The Color is one of black or red
+A turtle has a Position (in a x,y coordinate grid), a Direction and a Color.
 
 You can instruct the turtle to do something using the following instructions:
 
 * Move N, where n is an int
-* Turn Left, which rotates the direction anti-clockwise
-* Turn Right, which rotates the direction clockwise
-* Color Black, which changes the pen color to black
-* Color Red, which changes the pen color to red
+* Turn left, which rotates the direction anti-clockwise
+* Turn right, which rotates the direction clockwise
+* Change color to black
+* Change color to red
+ 
+1) Create a vocabulary for a turtle
 
-Write code that will make the above instructions work.
+2) Write code that will make the above instructions work.
 
-Then write code that will take a list of instructions and apply them all
+3) Then write code that will take a list of instructions and apply them all, as follows:
+
+let instructions = [
+    Turn Left
+    Move 100
+    SetColor Red
+    Turn Right
+    Move 10
+    ]
+
+instructions |> applyListOfInstructions 
 
 *)
 
@@ -35,27 +43,38 @@ type TurnInstruction = what??
 
 type TurtleInstruction =  what??
 
-// define a function that changes the position given a distance and direction
+// define a function that changes the position given a distance and direction and returns a new Position 
 let changePosition (distance:int) (direction:Direction) (pos:Position)  :Position =
     match direction with
     | what -> 
         what??
 
-// define a function that changes the direction given a turn instruction
+// define a function that changes the direction given a turn instruction and returns a new Direction 
 let turnDirection (turnInstruction:TurnInstruction) (direction:Direction) :Direction =
     match direction with
     | what -> 
         what??
 
-// define a function that moves the turtle given a 
+// define a function that moves the turtle given a TurtleInstruction and returns a new Turtle
 let moveTurtle (instruction:TurtleInstruction) (turtle:Turtle) :Turtle =
     match instruction with
     | what -> 
         what??
 
+// define function that applies a list of instructions
+let applyListOfInstructions (instructions:TurtleInstruction list) =
+    // List.fold has parameters [action] [initialValue] [list]
+    //   - action has two params - the state and the new instruction
+    let foldAction turtle instruction =
+        moveTurtle instruction turtle
+    let initialState = ??
+    List.fold foldAction initialState instructions 
 
+
+// ---------------------------------------------
 // test some examples
-let turtle0 = { pos=0,0; direction=North; color=Black}
+// ---------------------------------------------
+let turtle0 = ??
 
 let instruction1 = Turn Left
 let turtle1  = turtle0 |> moveTurtle instruction1 
@@ -63,8 +82,9 @@ let turtle1  = turtle0 |> moveTurtle instruction1
 let instruction2 = Move 100
 let turtle2  = turtle1 |> moveTurtle instruction2 
 
-
+// ---------------------------------------------
 // test a whole set of instructions
+// ---------------------------------------------
 let instructions = [
     Turn Left
     Move 100
@@ -73,9 +93,4 @@ let instructions = [
     Move 10
     ]
 
-// fold has parameters [action] [initialValue] [list]
-//   - action has two params - the state and the new instruction
-let foldAction turtle instruction =
-    moveTurtle instruction turtle
-let initialState = turtle0 
-List.fold foldAction initialState instructions 
+instructions |> applyListOfInstructions 

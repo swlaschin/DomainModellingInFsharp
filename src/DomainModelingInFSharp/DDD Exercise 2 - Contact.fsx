@@ -53,5 +53,5 @@ module StringTypes =
 
 open StringTypes
 
-type Contact = ??
+type Contact = ?? // you take it from here!
 

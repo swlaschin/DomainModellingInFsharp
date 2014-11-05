@@ -15,6 +15,11 @@ Each step is one of the following:
 
 An ingredient is either a Thing (e.g. an egg) or Stuff (e.g. milk)
 
+1) Create a vocabulary for a creating Recipes
+
+2) Write code that will make the example recipes (shown below) work
+
+
 *)
 
 
@@ -107,6 +112,8 @@ let pastaWithSauce = [
     thenDo "serve hot"
     ]
 
+// Add your own examples from a recipe site, such as 
+// http://www.bbc.co.uk/food/recipes/easy_chocolate_cake_31070
 
 // -----------------------------------------
 // Create utility functions that work with recipes to
@@ -130,10 +137,14 @@ let printSingleIngredient (ingredient:Ingredient) =
 // create a function that prints the ingredients, if it is an ingredient step, otherwise do nothing
 let printIngredientsForStep (step:RecipeStep) = 
     match step with
-    | IngredientStep ??
-    | InstructionStep ??
-    | OvenStep ??
-    | TimedStep ??
+    | IngredientStep ?? ->
+        // print how? See list syntax in "all you need to know"
+    | InstructionStep _ ->  // use underscore to ignore data
+        ()                  // return unit for ignored branches 
+    | OvenStep _ -> 
+        () 
+    | TimedStep _ -> 
+        () 
 
 // create a function that prints the all ingredients in the recipe
 let printIngredients (recipe:Recipe) = 

@@ -16,7 +16,21 @@ You can instruct the turtle to do something using the following instructions:
 * Change color to black
 * Change color to red
  
-Create a vocabulary for a turtle
+1) Create a vocabulary for a turtle
+
+2) Write code that will make the above instructions work.
+
+3) Then write code that will take a list of instructions and apply them all, as follows:
+
+let instructions = [
+    Turn Left
+    Move 100
+    SetColor Red
+    Turn Right
+    Move 10
+    ]
+
+instructions |> applyListOfInstructions 
 
 *)
 
@@ -38,7 +52,7 @@ type TurtleInstruction =
     | SetColor of Color
 
 
-// define a function that changes the position given a distance and direction
+// define a function that changes the position given a distance and direction and returns a new Position 
 let changePosition (distance:int) (direction:Direction) (pos:Position)  :Position =
     let x,y = pos
     match direction with
@@ -51,7 +65,7 @@ let changePosition (distance:int) (direction:Direction) (pos:Position)  :Positio
     | West -> 
         x - distance, y
 
-// define a function that changes the direction given a turn instruction
+// define a function that changes the direction given a turn instruction and returns a new Direction 
 let turnDirection (turnInstruction:TurnInstruction) (direction:Direction) :Direction =
     match direction with
     | North -> 
@@ -63,7 +77,7 @@ let turnDirection (turnInstruction:TurnInstruction) (direction:Direction) :Direc
     | West -> 
         match turnInstruction with Left -> South | Right -> North
 
-// define a function that moves the turtle given a 
+// define a function that moves the turtle given a TurtleInstruction and returns a new Turtle
 let moveTurtle (instruction:TurtleInstruction) (turtle:Turtle) :Turtle =
     match instruction with
     | Move distance -> 
@@ -75,8 +89,18 @@ let moveTurtle (instruction:TurtleInstruction) (turtle:Turtle) :Turtle =
     | SetColor newColor -> 
         {turtle with color = newColor}
 
+// define function that applies a list of instructions
+let applyListOfInstructions (instructions:TurtleInstruction list) =
+    // List.fold has parameters [action] [initialValue] [list]
+    //   - action has two params - the state and the new instruction
+    let foldAction turtle instruction =
+        moveTurtle instruction turtle
+    let initialState = { pos=0,0; direction=North; color=Black}
+    List.fold foldAction initialState instructions 
 
+// ---------------------------------------------
 // test some examples
+// ---------------------------------------------
 let turtle0 = { pos=0,0; direction=North; color=Black}
 
 let instruction1 = Turn Left
@@ -85,8 +109,9 @@ let turtle1  = turtle0 |> moveTurtle instruction1
 let instruction2 = Move 100
 let turtle2  = turtle1 |> moveTurtle instruction2 
 
-
+// ---------------------------------------------
 // test a whole set of instructions
+// ---------------------------------------------
 let instructions = [
     Turn Left
     Move 100
@@ -95,9 +120,4 @@ let instructions = [
     Move 10
     ]
 
-// fold has parameters [action] [initialValue] [list]
-//   - action has two params - the state and the new instruction
-let foldAction turtle instruction =
-    moveTurtle instruction turtle
-let initialState = turtle0 
-List.fold foldAction initialState instructions 
+instructions |> applyListOfInstructions 

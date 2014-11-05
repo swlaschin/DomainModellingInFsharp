@@ -4,7 +4,7 @@
 // ================================================
 
 (*
-// syntax examples
+// Design the types to work with these syntax examples
 let example1 = getDate 5 Days Ago
 let example2 = getDate 1 Hour Hence
 

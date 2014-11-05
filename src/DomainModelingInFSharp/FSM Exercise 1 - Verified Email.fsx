@@ -20,7 +20,10 @@ type EmailContactInfo =
 
 // Create a function that (maybe) creates a VerifiedEmail
 let verify (hash:string) (email:EmailAddress) :VerifiedEmail option =
-    if hash = // then what 
+    if hash = "OK" then 
+        // then what 
+    else
+        // else what 
     // remember, this function returns a new state
 
 // ================================================

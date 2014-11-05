@@ -194,10 +194,13 @@ match myChoice1WithData with
 let myList = [1;2;3]      // square brackets
 let myList2 = 0 :: myList // prepend with "::"
 
-let rec loopThroughList aList =   // NOTE: needs "rec" keyword for recursion
+// NOTE: needs "rec" keyword for recursion
+let rec loopThroughList aList =   
+
     match aList with
         | [] ->             // match empty list
             printfn "List is empty. Stopping." 
+
         | first::rest ->    // match first element and rest of list
             printfn "processing element %i" first
             loopThroughList rest
@@ -206,5 +209,18 @@ loopThroughList myList2
 
 // helpful methods in the "List" module.
 myList |> List.rev
-myList |> List.map (fun x -> x + 1)                // loop with lambda that returns a new value
-myList |> List.iter (fun x -> printfn "x=%i" x)    // loop with lambda that returns unit
+
+// "map" loop with one parameter lambda that returns a new value
+myList |> List.map (fun x -> x + 1)                
+
+// e.g. collect uppercase versions
+["Alice"; "Bob"; "Carol"] |> List.map (fun s -> s.ToUpper())
+
+// "iter" loop with one parameter lambda that returns unit (such as printfn)
+myList |> List.iter (fun x -> printfn "x=%i" x)    
+
+// e.g. given a print function with ONE parameter that returns unit
+let printHello = printfn "Hello %s"          // string -> unit
+ 
+// you can use List.iter like this:
+["Alice"; "Bob"; "Carol"] |> List.iter printHello 
