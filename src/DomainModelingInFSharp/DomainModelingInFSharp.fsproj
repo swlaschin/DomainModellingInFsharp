@@ -1,0 +1,102 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>41a07c34-53d6-4b60-b65d-c0d11941ec02</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <RootNamespace>DomainModelingInFSharp</RootNamespace>
+    <AssemblyName>DomainModelingInFSharp</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <Name>DomainModelingInFSharp</Name>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <Tailcalls>false</Tailcalls>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <WarningLevel>3</WarningLevel>
+    <DocumentationFile>bin\Debug\DomainModelingInFSharp.XML</DocumentationFile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <Tailcalls>true</Tailcalls>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <WarningLevel>3</WarningLevel>
+    <DocumentationFile>bin\Release\DomainModelingInFSharp.XML</DocumentationFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="mscorlib" />
+    <Reference Include="FSharp.Core, Version=4.3.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Numerics" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="HelloWorld.fsx" />
+    <None Include="Basic syntax you need to know.fsx" />
+    <None Include="Types Exercise 1 - Tuples.fsx" />
+    <None Include="Types Exercise 2 - Records.fsx" />
+    <None Include="Types Exercise 1 - Option types.fsx" />
+    <None Include="Types Exercise 2 - Choice types.fsx" />
+    <None Include="Types Exercise 2 - Choice types %28answers%29.fsx" />
+    <None Include="DDD Exercise 1 - CardGame.fsx" />
+    <None Include="DDD Exercise 1 - CardGame %28answers%29.fsx" />
+    <None Include="DDD Exercise 2 - Contact.fsx" />
+    <None Include="DDD Exercise 2 - Contact %28answers%29.fsx" />
+    <None Include="DDD Exercise 3 - Payments.fsx" />
+    <None Include="DDD Exercise 3 - Payments %28answers%29.fsx" />
+    <None Include="DDD Exercise 4 - Replacing flags.fsx" />
+    <None Include="DDD Exercise 4 - Replacing flags %28answers%29.fsx" />
+    <None Include="Roman Numerals.fsx" />
+    <None Include="Clean domain input and output.png" />
+    <None Include="DSL Exercise 1 - Time.fsx" />
+    <None Include="DSL Exercise 1 - Time %28answers%29.fsx" />
+    <None Include="DSL Exercise 2 - Turtle Graphics.fsx" />
+    <None Include="DSL Exercise 2 - Turtle Graphics %28answers%29.fsx" />
+    <None Include="DSL Exercise 3 - Recipe.fsx" />
+    <None Include="DSL Exercise 3 - Recipe %28answers%29.fsx" />
+    <None Include="FSM Exercises - Template to work from.fsx" />
+    <None Include="FSM Exercises - State machine diagram.png" />
+    <None Include="FSM Exercise 1 - Verified Email.fsx" />
+    <None Include="FSM Exercise 1 - Verified Email %28answers%29.fsx" />
+    <None Include="FSM Exercise 1 - Verified Email transition diagram.png" />
+    <None Include="FSM Exercise 2 - Shipments.fsx" />
+    <None Include="FSM Exercise 2 - Shipments %28answers%29.fsx" />
+    <None Include="FSM Exercise 2 - Shipments transition diagram.png" />
+    <None Include="FSM Exercise 3 - Shopping cart.fsx" />
+    <None Include="FSM Exercise 3 - Shopping cart %28answers%29.fsx" />
+    <None Include="FSM Exercise 3 - Shopping cart transition diagram.png" />
+    <None Include="Final Exercise - Model your own domain.fsx" />
+    <None Include="Syntax-help-Basic.fsx" />
+    <None Include="Syntax-help-Functions.fsx" />
+    <None Include="Syntax-help-Generics.fsx" />
+    <None Include="Syntax-help-Unit-type.fsx" />
+    <None Include="Syntax-help-Lists.fsx" />
+    <None Include="Syntax-help-Tuples.fsx" />
+    <None Include="Syntax-help-Records.fsx" />
+    <None Include="Syntax-help-Options-and-Choices.fsx" />
+    <Compile Include="OpaqueApiExample.fsi" />
+    <Compile Include="OpaqueApiExample.fs" />
+    <Compile Include="OpaqueApiClient.fs" />
+  </ItemGroup>
+  <PropertyGroup>
+    <MinimumVisualStudioVersion Condition="'$(MinimumVisualStudioVersion)' == ''">11</MinimumVisualStudioVersion>
+  </PropertyGroup>
+  <Import Project="$(MSBuildExtensionsPath32)\..\Microsoft SDKs\F#\3.0\Framework\v4.0\Microsoft.FSharp.Targets" Condition=" Exists('$(MSBuildExtensionsPath32)\..\Microsoft SDKs\F#\3.0\Framework\v4.0\Microsoft.FSharp.Targets')" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
