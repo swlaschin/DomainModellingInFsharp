@@ -44,7 +44,7 @@ module ShipmentsDomain =
 
     // 4) Create transition functions that transition from one state type to another
 
-    let sendOutForDelivery (package:Package) (truckId:TruckId)  :Shipment = 
+    let sendOutForDelivery (package:UndeliveredData) (truckId:TruckId)  :Shipment = 
         let utcNow = System.DateTime.UtcNow
         // return new state
         let outForDeliveryData = package, truckId, utcNow 
