@@ -1,6 +1,6 @@
-# Domain Driven Design in F#
+# Domain Modelling in F#
 
-This is the training material for a hands-on 3 hour "Domain Driven Design in F#" session.
+This is the training material for a hands-on 3 hour "Domain Modelling in F#" session.
 
 The topics covered are:
 * Why use F# for domain modelling?
